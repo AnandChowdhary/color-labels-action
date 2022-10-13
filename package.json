@@ -41,6 +41,8 @@
     "@koj/config": "^1.2.11"
   },
   "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
     "roots": [
       "<rootDir>/src/"
     ],
