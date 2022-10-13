@@ -1,6 +1,6 @@
 {
   "name": "color-labels-action",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "GitHub Action to add some color to issue labels",
   "main": "dist/index.js",
   "scripts": {
