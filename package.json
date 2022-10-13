@@ -1,7 +1,7 @@
 {
-  "name": "github-actions-starter",
-  "version": "1.0.5",
-  "description": "Starter for GitHub Actions with TypeScript and automated releases",
+  "name": "color-labels-action",
+  "version": "0.0.0",
+  "description": "GitHub Action to add some color to issue labels",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/koj-co/action.ts.git"
+    "url": "git+https://github.com/AnandChowdhary/color-labels-action.git"
   },
   "keywords": [
     "github",
@@ -22,9 +22,9 @@
   "author": "Anand Chowdhary <mail@anandchowdhary.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/koj-co/action.ts/issues"
+    "url": "https://github.com/AnandChowdhary/color-labels-action/issues"
   },
-  "homepage": "https://github.com/koj-co/action.ts#readme",
+  "homepage": "https://github.com/AnandChowdhary/color-labels-action#readme",
   "devDependencies": {
     "@semantic-release/git": "^10.0.1",
     "@types/jest": "^29.1.2",
