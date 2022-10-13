@@ -2677,7 +2677,7 @@ const lowercaseKeys = (obj) => Object.keys(obj).reduce((c, k) => ((c[k.toLowerCa
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.wait = exports.run = void 0;
+exports.run = void 0;
 const core_1 = __webpack_require__(470);
 const github_1 = __webpack_require__(469);
 const token = (0, core_1.getInput)("token") || process.env.GH_PAT || process.env.GITHUB_TOKEN;
@@ -2685,18 +2685,10 @@ const run = async () => {
     if (!token)
         throw new Error("GitHub token not found");
     const octokit = (0, github_1.getOctokit)(token);
-    const ms = (0, core_1.getInput)("milliseconds");
-    (0, core_1.debug)(`Waiting ${ms} milliseconds ...`);
-    (0, core_1.debug)(new Date().toTimeString());
-    await (0, exports.wait)(parseInt(ms, 10));
     (0, core_1.debug)(new Date().toTimeString());
     (0, core_1.setOutput)("time", new Date().toTimeString());
 };
 exports.run = run;
-const wait = (milliseconds) => {
-    return new Promise((resolve) => setTimeout(() => resolve(), milliseconds));
-};
-exports.wait = wait;
 (0, exports.run)()
     .then(() => { })
     .catch((error) => {
