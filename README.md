@@ -1,31 +1,39 @@
-# 🎬 GitHub Actions Starter
+# 🏷🌈 Color Labels Action
 
-GitHub Actions starter for TypeScript with automated releases to `dist`, Semantic Release, and auto-PR merges.
+Automatically color all labels in your repository.
 
-[![Build CI](https://github.com/koj-co/action.ts/workflows/Build%20CI/badge.svg)](https://github.com/koj-co/action.ts/actions?query=workflow%3A%22Build+CI%22)
-[![Test CI](https://github.com/koj-co/action.ts/workflows/Test%20CI/badge.svg)](https://github.com/koj-co/action.ts/actions?query=workflow%3A%22Test+CI%22)
-[![Release CI](https://github.com/koj-co/action.ts/workflows/Release%20CI/badge.svg)](https://github.com/koj-co/action.ts/actions?query=workflow%3A%22Release+CI%22)
-[![Node CI](https://github.com/koj-co/action.ts/workflows/Node%20CI/badge.svg)](https://github.com/koj-co/action.ts/actions?query=workflow%3A%22Node+CI%22)
+[![Build CI](https://github.com/AnandChowdhary/color-labels-action/workflows/Build%20CI/badge.svg)](https://github.com/AnandChowdhary/color-labels-action/actions?query=workflow%3A%22Build+CI%22)
+[![Test CI](https://github.com/AnandChowdhary/color-labels-action/workflows/Test%20CI/badge.svg)](https://github.com/AnandChowdhary/color-labels-action/actions?query=workflow%3A%22Test+CI%22)
+[![Release CI](https://github.com/AnandChowdhary/color-labels-action/workflows/Release%20CI/badge.svg)](https://github.com/AnandChowdhary/color-labels-action/actions?query=workflow%3A%22Release+CI%22)
+[![Node CI](https://github.com/AnandChowdhary/color-labels-action/workflows/Node%20CI/badge.svg)](https://github.com/AnandChowdhary/color-labels-action/actions?query=workflow%3A%22Node+CI%22)
 
-## ⭐ Features
+<img width="1227" alt="Screenshot of GitHub issues page with colored labels" src="https://user-images.githubusercontent.com/2841780/195546565-18e7018c-0c7d-487b-a195-efe8f1033274.png">
 
-- Write source in TypeScript
-- Auto-publish compiled code to `dist/`
-- Semantic Release to GitHub and npm
-- Includes Actions Core and Octokit
+## ⭐ How it works
 
-[**Create a repository using this template →**](https://github.com/koj-co/action.ts/generate)
+If you're programmatically creating new labels for your repository, they would all be boring and gray. This Action automatically adds nice, soft colors for all your repository labels that are gray.
+
+You can run this Action after updating labels:
+
+```yaml
+name: Test CI
+on:
+  push:
+    branches: [main]
+jobs:
+  test:
+    name: Something that updates labels
+    runs-on: ubuntu-18.04
+    steps:
+      # Do something with labels
+      # Then run this Action
+      - name: Color all labels
+        uses: AnandChowdhary/color-labels-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
 
 ## 📄 License
 
-- Code: [MIT](./LICENSE) © [Koj](https://koj.co)
+- Code: [MIT](./LICENSE) © [Anand Chowdhary](https://anandchowdhary.com)
 - "GitHub" is a trademark of GitHub, Inc.
-
-<p align="center">
-  <a href="https://koj.co">
-    <img width="44" alt="Koj" src="https://kojcdn.com/v1598284251/website-v2/koj-github-footer_m089ze.svg">
-  </a>
-</p>
-<p align="center">
-  <sub>An open source project by <a href="https://koj.co">Koj</a>. <br> <a href="https://koj.co">Furnish your home in style, for as low as CHF175/month →</a></sub>
-</p>
